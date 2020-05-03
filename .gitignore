@@ -1,0 +1,10 @@
+/target
+/local
+
+# IDE files
+/.*
+!.gitignore
+!.gitattributes
+/*.ipr
+/*.iws
+/*.iml

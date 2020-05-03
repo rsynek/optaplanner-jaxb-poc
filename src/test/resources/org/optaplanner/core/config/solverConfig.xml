@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+  <localSearch>
+    <localSearchType>LATE_ACCEPTANCE</localSearchType>
+    <unionMoveSelector>
+      <cartesianProductMoveSelector>
+        <changeMoveSelector>
+          <entitySelector id="cartesianProductEntitySelector">
+            <entityClass>org.optaplanner.examples.examination.domain.Exam</entityClass>
+          </entitySelector>
+          <valueSelector variableName="room"/>
+        </changeMoveSelector>
+        <changeMoveSelector>
+          <entitySelector mimicSelectorRef="cartesianProductEntitySelector"/>
+          <valueSelector variableName="period">
+            <downcastEntityClass>org.optaplanner.examples.examination.domain.LeadingExam</downcastEntityClass>
+          </valueSelector>
+        </changeMoveSelector>
+      </cartesianProductMoveSelector>
+      <swapMoveSelector>
+        <entitySelector>
+          <entityClass>org.optaplanner.examples.examination.domain.LeadingExam</entityClass>
+        </entitySelector>
+      </swapMoveSelector>
+    </unionMoveSelector>
+  </localSearch>
+</solver>
